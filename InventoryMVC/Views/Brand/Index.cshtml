@@ -1,0 +1,46 @@
+﻿@model IEnumerable<InventoryMVC.Models.BrandData>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Brand</h1>
+<div>
+    <p>
+    <a asp-action="Create">Add New</a>
+</p>
+<div class="table-responsive">
+    <table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrandId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrandName)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.BrandId  }) |
+                    @Html.ActionLink("Details", "Details", new { id=item.BrandId  }) |
+                    @Html.ActionLink("Delete", "Delete", new {  id=item.BrandId  })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+</div>
+</div>
+

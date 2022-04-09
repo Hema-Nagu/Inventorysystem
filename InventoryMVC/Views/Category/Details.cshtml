@@ -1,0 +1,29 @@
+﻿@model InventoryMVC.Models.CategoryData
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h2>Category Details</h2>
+    <hr />
+    <div class="table-responsive">
+        <table style="width:400px" class="table table-bordered">
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.CategoryId)</td>
+                    <td>@Html.DisplayFor(model => model.CategoryId)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.CategoryName)</td>
+                    <td>@Html.DisplayFor(model => model.CategoryName)</td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryId  }) |
+        <a asp-action="Index">Back</a><br /><br />
+    </div>
+</div>
