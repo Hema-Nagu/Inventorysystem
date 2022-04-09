@@ -1,1 +1,1 @@
-Inventory=master
+Inventory-master
