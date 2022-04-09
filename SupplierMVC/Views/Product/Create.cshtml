@@ -1,0 +1,85 @@
+﻿@model InventoryMVC.Models.ProductCreateModel
+
+
+@using InventoryMVC.Extensions
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<br />
+
+
+<form method="post" enctype="multipart/form-data" action="Create">
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary()
+
+     <div class="form-group row">
+        <div class="col-2">
+            <label asp-for="productData.product_Name"></label>
+        </div>
+        <div class="col-4">
+            <input asp-for="productData.product_Name"  class="form-control"></input>
+            <span asp-validation-for="productData.product_Name" class="text-danger"></span>
+        </div></div>
+    <br />
+    <div class="form-group row">
+        <div class="col-2">
+            <label asp-for="productData.CategoryId"></label>
+        </div>
+        <div class="col-4">
+            <select asp-for="productData.CategoryId" asp-items="IEnumerableExtensions.categoryItem(Model.categories)" id="Category" class="form-control"></select>
+            <span asp-validation-for="productData.CategoryId" class="text-danger"></span>
+            </div>
+        </div>
+    <br />
+
+    <div class="form-group row">
+        <div class="col-2">
+            <label asp-for="brands"></label>
+        </div>
+        <div class="col-4">
+            <select asp-for="productData.BrandId" asp-items="IEnumerableExtensions.brandItem(Model.brands)" id="BrandData" class="form-control"></select>
+            <span asp-validation-for="productData.BrandId" class="text-danger"></span>
+            </div></div>
+    <br />
+    <div class="form-group row">
+        <div class="col-2">
+            <label asp-for="suppliers"></label>
+        </div>
+        <div class="col-4">
+            <select asp-for="productData.SupplierId" asp-items="IEnumerableExtensions.supplierItem(Model.suppliers)" id="SupplierData" class="form-control"></select>
+            <span asp-validation-for="productData.SupplierId" class="text-danger"></span>
+            </div></div>
+    <br />
+
+    <div class="form-group row">
+        <div class="col-2">
+            <label asp-for="productData.product_price"></label>
+        </div>
+        <div class="col-4">
+            <input asp-for="productData.product_price"  class="form-control"></input>
+            <span asp-validation-for="productData.product_price" class="text-danger"></span>
+        </div></div>
+    <br />
+
+    <div class="form-group row">
+        <div class="col-2">
+            <label asp-for="productData.inventory.stock_product_quantity"></label>
+        </div>
+        <div class="col-4">
+            <input asp-for="productData.inventory.stock_product_quantity"  class="form-control"></input>
+            <span asp-validation-for="productData.inventory.stock_product_quantity" class="text-danger"></span>
+        </div></div>
+    <br />
+
+    
+    <br /><br />
+    <div class="form-group">
+        <input type="submit" class="btn btn-light" value="Add" />
+        <a asp-action="Index" class="btn btn-dark">Back</a>
+    </div>
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

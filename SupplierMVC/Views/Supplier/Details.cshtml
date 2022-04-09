@@ -1,0 +1,45 @@
+﻿@model InventoryMVC.Models.SupplierData
+@using InventoryMVC.Models
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div>
+    <h2>Supplier Details</h2>
+    <hr />
+    <div class="table-responsive">
+        <table style="width:400px" class="table table">
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.supplierId)</td>
+                    <td>@Html.DisplayFor(model => model.supplierId)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.supplierName)</td>
+                    <td>@Html.DisplayFor(model => model.supplierName)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.supplierBulstat)</td>
+                    <td>@Html.DisplayFor(model => model.supplierBulstat)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.supplierAddress)</td>
+                    <td>@Html.DisplayFor(model => model.supplierAddress)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.supplierEmail)</td>
+                    <td>@Html.DisplayFor(model => model.supplierEmail)</td>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayNameFor(model => model.supplierPhone)</td>
+                    <td>@Html.DisplayFor(model => model.supplierPhone)</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.supplierId  }) |
+        <a asp-action="Index">Back</a><br /><br />
+    </div>   
+</div>
+
