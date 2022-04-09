@@ -1,1 +1,1 @@
-Supplier-master
+Inventory=master
